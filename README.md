@@ -60,7 +60,7 @@ $ npm test
 
 ##### Timeout
 
-A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos podem excede-lo.
+A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos (ex:800) podem excede-lo.
 
 
 [typescript]: https://www.typescriptlang.org/
