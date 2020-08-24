@@ -46,7 +46,7 @@ const mercadoLivreScraping = async function (search: string, limit: number) {
         items.push(item);
         limit--;
       });
-      search = search + '_Desde_' + items.length;
+      search = search + '_Desde_' + (items.length + 1);
     } while (limit);
 
     return items;
