@@ -17,8 +17,8 @@ const mercadoLivreScraping = async function (search: string, limit: number) {
         'https://lista.mercadolivre.com.br/' + search.replace(' ', '-'),
       );
       const $ = cheerio.load(response.data);
-      const $$ = $('.items-item');
-      if (!$$) throw new Error('Failed to load response');
+      const $$ = $('.results-item');
+      if (!$$.length) throw new Error('Failed to load response');
       $$.slice(0, limit > $$.length ? $$.length - 1 : limit).each(function (
         i,
         elem,
