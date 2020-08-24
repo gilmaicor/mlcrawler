@@ -50,19 +50,6 @@ $ npm start
 
 A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos podem excede-lo.
 
-```json
-[
-  {
-    "name": String,
-    "link": String,
-    "price": Number,
-    "store": String,
-    "state": String
-  },
-  ...
-]
-````
-
 ### Teste
 
 ```sh
