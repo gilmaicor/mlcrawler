@@ -35,15 +35,26 @@ const mercadoLivreScraping = async function (search: string, limit: number) {
           decimals:
             $(elem).find('.item__price > .price__decimals').text().trim() ||
             '00',
+          options: $(elem)
+            .find('.pdp_options__text > a')
+            .text()
+            .trim()
+            .replace(/\D/g, ''),
         };
         const title = $(elem).find('.item__title').text().split('por');
         const item: Items = {
           name: title[0].trim(),
-          price: Number(`${price.fraction}.${price.decimals}`),
+          price: price.fraction
+            ? Number(`${price.fraction}.${price.decimals}`)
+            : Number(price.options),
           link: $(elem).find('a').attr('href'),
           store: title[1] ? title[1].trim() : null,
           state: !!$(elem).find('.item__status').text().trim()
-            ? $(elem).find('.item__status').text().trim()
+            ? $(elem)
+                .find('.item__status')
+                .text()
+                .trim()
+                .replace('Usado - ', '')
             : null,
         };
         items.push(item);
