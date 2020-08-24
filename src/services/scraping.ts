@@ -12,9 +12,12 @@ interface Items {
 const mercadoLivreScraping = async function (search: string, limit: number) {
   try {
     const items: Array<Items> = [];
+    let newPage = '';
     do {
       const response = await axios.get(
-        'https://lista.mercadolivre.com.br/' + search.replace(' ', '-'),
+        'https://lista.mercadolivre.com.br/' +
+          search.replace(' ', '-') +
+          newPage,
       );
       const $ = cheerio.load(response.data);
       const $$ = $('.results-item');
@@ -46,7 +49,7 @@ const mercadoLivreScraping = async function (search: string, limit: number) {
         items.push(item);
         limit--;
       });
-      search = search + '_Desde_' + (items.length + 1);
+      newPage = '_Desde_' + (items.length + 1);
     } while (limit);
 
     return items;
