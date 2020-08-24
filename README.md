@@ -51,16 +51,17 @@ $ npm start
 ````
 
 
-### Timeout
-
-A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos podem excede-lo.
-
-
 ### Teste
 
 ```sh
 $ npm test
 ```
+
+
+#### Timeout
+
+A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos podem excede-lo.
+
 
 [typescript]: https://www.typescriptlang.org/
 [axios]: https://github.com/axios/axios/
