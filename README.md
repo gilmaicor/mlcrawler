@@ -58,7 +58,7 @@ $ npm test
 ```
 
 
-#### Timeout
+##### Timeout
 
 A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos podem excede-lo.
 
