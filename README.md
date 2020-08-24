@@ -2,6 +2,7 @@
 
 Web crawler para busca de uma lista de produtos no Mercado Livre.
 
+
 ### Tecnologias
 
 - [TypeScript] - Superconjunto de JavaScript que adiciona tipagem e alguns outros recursos a linguagem.
@@ -9,6 +10,7 @@ Web crawler para busca de uma lista de produtos no Mercado Livre.
 - [Axios] - Cliente HTTP baseado em promessa para o navegador e node.js.
 - [Cheerio] - Implementação rápida, flexível e enxuta do núcleo do jQuery projetado especificamente para o servidor.
 - [Jest] - É uma estrutura de teste de JavaScript mantida pelo Facebook, Inc. com foco na simplicidade.
+
 
 ### Instalação
 
@@ -22,6 +24,7 @@ $ npm install
 $ npm start
 ```
 
+
 ### Entrada
 
 ```json
@@ -30,6 +33,7 @@ $ npm start
   "limit": Int
 }
 ```
+
 
 ### Saída
 
@@ -46,9 +50,11 @@ $ npm start
 ]
 ````
 
+
 ### Timeout
 
 A aplicação conta com um timeout de 30000ms, _requests_ com limites muito altos podem excede-lo.
+
 
 ### Teste
 
